@@ -15,7 +15,6 @@ import (
 func Generator(ctx context.Context, ch chan<- int64, fn func(int64)) {
 	defer close(ch)
 	val := int64(1)
-
 	for {
 		select {
 		case <-ctx.Done():
